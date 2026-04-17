@@ -42,7 +42,6 @@ createTodoBtn.addEventListener("click",()=>{
     liElm.setAttribute("class","flex justify-between item-center w-[80vw] m-auto p-4 rounded-md shadow-md")
     
     toDoCont.append(liElm)
-
     taskNameInput.value = ""
 })
 
@@ -54,7 +53,12 @@ function saveTodoData(data){
 
     localStorage.setItem("todoData",JSON.stringify(todoData));
 }
+function saveTodoData(data){
+    todoData.push(data)
+    console.log(todoData)
 
+    localStorage.setItem("todoData",JSON.stringify(todoData));
+}
 saveTodoData({
     "name":"complete Todo app",
     "status":false
